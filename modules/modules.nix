@@ -1,3 +1,4 @@
+nixpkgs:
 { pkgs
 
   # Note, this should be "the standard library" + HM extensions.
@@ -31,7 +32,7 @@ let
     (loadModule ./misc/gtk.nix { })
     (loadModule ./misc/lib.nix { })
     (loadModule ./misc/news.nix { })
-    (loadModule ./misc/nixpkgs.nix { condition = useNixpkgsModule; })
+    (loadModule (import ./misc/nixpkgs.nix nixpkgs) { condition = useNixpkgsModule; })
     (loadModule ./misc/numlock.nix { condition = hostPlatform.isLinux; })
     (loadModule ./misc/pam.nix { })
     (loadModule ./misc/qt.nix { })
