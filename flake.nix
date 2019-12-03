@@ -5,6 +5,7 @@
 
   outputs = { self, nixpkgs }: rec {
 
-    nixosModules.home-manager = ./nixos;
+    nixosModules.home-manager = import ./nixos nixpkgs;
+
   };
 }

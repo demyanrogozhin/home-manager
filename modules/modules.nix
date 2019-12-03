@@ -1,3 +1,4 @@
+nixpkgs:
 { pkgs
 , lib
 
@@ -27,7 +28,7 @@ let
     (loadModule ./misc/gtk.nix { })
     (loadModule ./misc/lib.nix { })
     (loadModule ./misc/news.nix { })
-    (loadModule ./misc/nixpkgs.nix { })
+    (loadModule (import ./misc/nixpkgs.nix nixpkgs) { })
     (loadModule ./misc/numlock.nix { condition = hostPlatform.isLinux; })
     (loadModule ./misc/pam.nix { })
     (loadModule ./misc/qt.nix { })
@@ -156,8 +157,8 @@ let
     (loadModule ./xcursor.nix { })
     (loadModule ./xresources.nix { })
     (loadModule ./xsession.nix { })
-    (loadModule <nixpkgs/nixos/modules/misc/assertions.nix> { })
-    (loadModule <nixpkgs/nixos/modules/misc/meta.nix> { })
+    (loadModule "${nixpkgs}/nixos/modules/misc/assertions.nix" { })
+    (loadModule "${nixpkgs}/nixos/modules/misc/meta.nix" { })
   ];
 
   modules = map (getAttr "file") (filter (getAttr "condition") allModules);

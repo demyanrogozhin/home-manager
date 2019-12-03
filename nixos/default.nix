@@ -1,3 +1,4 @@
+nixpkgs:
 { config, lib, pkgs, utils, ... }:
 
 with lib;
@@ -7,7 +8,7 @@ let
   cfg = config.home-manager;
 
   hmModule = types.submodule ({name, ...}: {
-    imports = import ../modules/modules.nix { inherit lib pkgs; };
+    imports = import ../modules/modules.nix nixpkgs { inherit lib pkgs; };
 
     config = {
       submoduleSupport.enable = true;
