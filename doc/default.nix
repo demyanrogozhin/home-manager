@@ -26,10 +26,10 @@ let
   };
 
   hmModulesDocs = nmd.buildModulesDocs {
-    modules = import ../modules/modules.nix {
+    modules = (import ../modules/modules.nix {
       inherit lib pkgs;
       check = false;
-    } ++ [ scrubbedPkgsModule ];
+    }) ++ [ scrubbedPkgsModule ];
     moduleRootPaths = [ ./.. ];
     mkModuleUrl = path:
       "https://github.com/rycee/home-manager/blob/master/${path}#blob-path";
