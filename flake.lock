@@ -1,9 +1,8 @@
 {
     "inputs": {
         "nixpkgs": {
-            "inputs": {},
-            "narHash": "sha256-Y5ZOTgInrYYoas3vM8uTPLA2DvFI9YoI6haftIKl9go=",
-            "originalUrl": "nixpkgs",
+            "narHash": "sha256-gB0Q6NY4JGSYOEwpPy2J5UIdf99Yf8f+eR+S8K3VHSU=",
+            "originalUrl": "github:demyanrogozhin/nixpkgs/fork",
             "url": "github:demyanrogozhin/nixpkgs/cfb953fc747ed1e11869824089ee31e320e55a19"
         }
     },
