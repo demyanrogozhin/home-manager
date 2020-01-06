@@ -25,7 +25,7 @@ let
     (loadModule ./accounts/email.nix { })
     (loadModule ./files.nix { })
     (loadModule ./home-environment.nix { })
-    (loadModule ./manual.nix { })
+    (loadModule (import ./manual.nix nixpkgs) {  })
     (loadModule ./misc/dconf.nix { })
     (loadModule ./misc/debug.nix { })
     (loadModule ./misc/fontconfig.nix { })
