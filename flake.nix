@@ -3,7 +3,7 @@
 
   description = "Home Manager for Nix";
 
-  inputs.nixpkgs.url = "github:demyanrogozhin/nixpkgs/47f887927adde9905d3baf3a37c7dfabbcff55ee";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/e42312e354f91300d20dbbdb6a82d1b5b257155f";
 
   outputs = { self, nixpkgs }: rec {
 
